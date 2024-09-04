@@ -1,0 +1,55 @@
+import discord
+import random
+from discord.ext import commands
+
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix='/', intents=intents)
+
+@bot.event
+async def on_ready():
+    print(f'{bot.user} olarak giriş yaptık')
+
+@bot.command()
+async def plastik(ctx):
+    await ctx.send(f'Plastik doğada 1000 yılda yok olur')
+
+@bot.command()
+async def gazete(ctx):
+    await ctx.send(f'Gazete doğada 3 ayda yok olur')
+
+@bot.command()
+async def mendil(ctx):
+    await ctx.send(f'Mendil doğada 2-4 hafta yok olur')
+
+@bot.command()
+async def telefonkarti(ctx):
+    await ctx.send(f'Telefon Kartı doğada 1000 yılda yok olur')
+
+@bot.command()
+async def cakmak(ctx):
+    await ctx.send(f'Çakmak doğada 100 yılda yok olur')
+
+@bot.command()
+async def kutukola(ctx):
+    await ctx.send(f'Kutu Kola doğada 10 yılda yok olur')
+
+@bot.command()
+async def fotograf(ctx):
+    a = random.randint(1,7)
+    if a == 1:
+        await ctx.send(f'https://bigumigu.com/wp-content/uploads/2015/04/2015-04-17-1429253824-191745286.jpg')
+    if a == 2:
+        await ctx.send(f'https://static.euronews.com/articles/stories/04/98/46/68/1440x810_cmsv2_f544f818-a4ea-519f-8db1-5d2cd5cd0424-4984668.jpg')
+    if a == 3:
+        await ctx.send(f'https://cdn.tua.gov.tr/61c0307c32b8b.png')
+    if a == 4:
+        await ctx.send(f'https://aydinlatma.org/wp-content/uploads/2020/04/Isik-Kirliligi.jpg')
+    if a == 5:
+        await ctx.send(f'https://cdn1.ntv.com.tr/gorsel/zRUKa_53fk68UKSThDmXfw.jpg?width=1060&height=795&mode=crop&scale=both&v=1488783648373&meta=square')
+    if a == 6:
+        await ctx.send(f'https://www.indyturk.com/sites/default/files/styles/1368x911/public/article/main_image/2021/01/27/571451-1787717618.jpg?itok=jYp4NB_l')
+    if a == 7:
+        await ctx.send(f'https://ekolojist.net/wp-content/uploads/2018/04/su-kirliligi-nasil-onlenir.jpg')
+bot.run("TOKEN HERE")
